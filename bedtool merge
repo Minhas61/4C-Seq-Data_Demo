@@ -1,0 +1,13 @@
+for file in *.bed ; 
+do 
+bedtools merge -i $file -d 50 -c 2,3 -o count >../True-P_merged/merged_"$file";
+done
+
+Then, add headers on the files 
+track name=22RVI  description='TBXT promoter interacting regions' custom track visibility =fill windowFunction=maximum
+
+concatenating files
+cat True-P_merged/*.bed >Int_regions/interactors.bed
+
+compressing for browser loading 
+gzip Int_regions/interactors.bed >interactors

@@ -1,0 +1,12 @@
+#####
+Demultiplex and trim raw reads to 30bps, either read1 or read2, use demultiplex.py and trim.py to run this
+Download in fasta format and buid genome index using bowtie at the cluster
+Run the 4C.pl pipeline at the cluster, either through SLURM or MIP job submissions, check 4C.pl for further requirements
+Load smooth_data and wigfiles on genome browsers to check profile peak distributions at the view point, if happy proceed with further analysis
+Check bowtie.log for further info on mapping
+Use interact.R to run interaction calling on fragscounts files following 4C.pl and then check plots if they are fine, head the Coutput see how it looks
+Proceed to identify True interactors, using True_interactions.R
+Merge using bedtool merge.... bedtool merge.txt
+Look at the merge regions/ which are now interactors in the browser also, but put heads/descriptions, then concatinate for easier uploading and labelling in browsers
+
+#####
